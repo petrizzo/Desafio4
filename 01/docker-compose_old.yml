@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    container_name: nginx_web
+    image: nginx:alpine
+    ports:
+      -8080:80
+    environment:
+      - PRUEBA=1234
+    depends_on:
+      - mysql
+      - backend
+    networks:
+      - net_nginx
+      
